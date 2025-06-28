@@ -37,7 +37,8 @@ def checkoutGitProject(configs){
 
 def projectConfigs = [
 
-    gitBranch   : "${params.PROJECT_BRANCH}",
+    //gitBranch   : "${params.PROJECT_BRANCH}",
+    gitBranch   : "main",
     gitURL      : "https://github.com/Muthuraj647/RTB",
     projectDir  : "RTB",
 
