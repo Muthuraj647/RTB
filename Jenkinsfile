@@ -10,7 +10,7 @@ def checkOutFunc(String url,String branch){
 
     // ! -d .git --> checks if .git file exists, git clean -fdx will remove all files, directories (d), not tracked files (x) forcefully (f)
     
-    sh '[! -d .git] || git clean -fdx'
+    sh '[ ! -d .git ] || git clean -fdx'
     try{
         if(branch != null){
             checkout([$class: 'GitSCM', branches: [[name: "*/${branch}"]],
