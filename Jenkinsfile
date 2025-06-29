@@ -2,7 +2,7 @@
 //Author - Muthuraj647
 
 def getBuildType(){
-    echo "${env.JOB_NAME}"
+    echo "Job name: ${env.JOB_NAME}"
     return "release"
 }
 
@@ -34,14 +34,20 @@ def checkoutGitProject(configs){
     }
 }
 
+def yamlLintCheck(configs){
+    dir (configs.deploymentDir) {
+        sh 'yamllint docker-compose.yaml'
+    }
+}
+
 
 def projectConfigs = [
 
     //gitBranch   : "${params.PROJECT_BRANCH}",
-    gitBranch   : "main",
-    gitURL      : "https://github.com/Muthuraj647/RTB",
-    projectDir  : "RTB",
-
+    gitBranch           : "main",
+    gitURL              : "https://github.com/Muthuraj647/RTB",
+    projectDir          : "RTB",
+    deploymentDir       : "Deployment"
 ]
 
 try{
@@ -54,6 +60,7 @@ try{
             echo "Checkout done"
         }
         stage('Lint check'){
+            yamlLintCheck(projectConfigs)
             echo "Lint check done"
         }
         stage('Test'){
