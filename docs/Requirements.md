@@ -1,6 +1,6 @@
-## Functional Requirements
+# Functional Requirements
 
-# Enduser
+## Enduser
 
 1. User Registration & Login
 2. Search train by date, source and destination
@@ -9,7 +9,7 @@
 5. Payment
 6. View Booking History, View ticket details
 
-# Admin
+## Admin
 
 1. Add/Delete/Update routes and stations
 2. Add/Delete/Update Trains and timings
