@@ -3,7 +3,7 @@
 
 def getBuildType(){
     echo "Job Name"
-    echo "Job name: ${env.JOB_NAME}"
+    // echo "Job name: ${env.JOB_NAME}"
     return "release"
 }
 
