@@ -55,7 +55,7 @@ def projectConfigs = [
 try{
     currentBuild.result = 'SUCCESS'
 
-    node{
+    node(ubuntu-host) {
         stage('Checkout'){
 
             checkoutGitProject(projectConfigs)
