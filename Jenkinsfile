@@ -37,6 +37,7 @@ def checkoutGitProject(configs){
 
 def yamlLintCheck(configs){
     dir (configs.deploymentDir) {
+        sh 'pwd'
         sh 'yamllint docker-compose.yaml'
     }
 }
